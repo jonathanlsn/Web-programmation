@@ -2,14 +2,17 @@
 <html>
   <head>
     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    
+    <title>{{ page_title|default('Être confiné pour les nuls') }}</title>
+    
 {% block head %}{% endblock %}
   </head>
   <body>
     <ul>
-      <li><a href="{{ url_for('index') }}#home">Home</a></li>
+      <li><a href="{{ url_for('index') }}#home">Acceuille</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li style="float:right" ><a href="{{ url_for('about') }}">About</a></li>
+      <li style="float:right" ><a href="{{ url_for('about') }}">À propos</a></li>
     </ul>
 
 {% block content %}{% endblock %}

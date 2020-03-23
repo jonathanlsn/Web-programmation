@@ -11,6 +11,7 @@ from data import ARTICLES
 
 app = Flask(__name__)
 
+translate = {"Monday":"Lundi","Tuesday":"Mardi","Wednesday":"Mercredi","Thursday":"Jeudi","Friday":"Vendredi","Saturday":"Samedi","Sunday":"Dimanche","January":"Janvier","February":"Février","March":"Mars","April":"Avril","May":"Mai","June":"Juin","July":"Juillet","August":"Août","September":"Septembre","October":"Octobre","November":"Novembre","December":"Décembre"}
 
 def deal_with_post():
     # Get the form content
@@ -48,21 +49,22 @@ def index():
 
 
 @app.route('/about')
-def about():
+def about(page_title="À propos"):
     app.logger.debug('about')
     today = datetime.today()
     # Create a context
     tpl_context = {}
     # Populate a context to feed the template
     # (cf. http://strftime.org/ for string formating with datetime)
-    tpl_context.update({'day': '{:%A}'.format(today)})
+    tpl_context.update({'day': translate['{:%A}'.format(today)]})
     tpl_context.update({'d_o_month': '{:%d}'.format(today)})
-    tpl_context.update({'month': '{:%B}'.format(today)})
+    tpl_context.update({'month': translate['{:%B}'.format(today)]})
     tpl_context.update({'time': '{:%X}'.format(today)})
     tpl_context.update({'date': today})
     # Now let's see how the context looks like
     app.logger.debug('About Context: {}'.format(tpl_context))
-    return render_template('about.html', context=tpl_context)
+    app.logger.debug(page_title)
+    return render_template('about.html', context=tpl_context,page_title=page_title)
 
 
 @app.route('/test')
