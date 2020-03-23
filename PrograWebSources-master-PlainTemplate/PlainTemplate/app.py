@@ -7,6 +7,8 @@ from flask import Flask
 from flask import request, make_response
 from flask import render_template
 
+from data import ARTICLES
+
 app = Flask(__name__)
 
 
@@ -69,6 +71,22 @@ def test():
      resp.headers['X-My-Neat-Header'] = 'Foo/Bar'
      return resp
     #return 'Thanks for all the fish', 501
+
+
+@app.route('/search/', methods=['GET'])
+def search():
+    app.logger.debug(request.args)
+    if (request.method=="GET"):
+        wordsearch=request.args.get("pattern",'')
+        result=[]
+        for article in ARTICLES:
+            if wordsearch.lower() in article["name"].lower() :
+                result.append(article)
+        if result==[]:
+            return render_template('article.html',articlename=ARTICLES)
+        else:
+            return render_template('article.html',articlename=result)     
+
 
 
 # Script starts here

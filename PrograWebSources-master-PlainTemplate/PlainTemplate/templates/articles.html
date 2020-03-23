@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+      <h1 class="mt-5">Articles</h1>
+      <div class="alert alert-info" role="alert">
+        <p class="lead">Use Jinja templating system to produce a list of articles in <code>app.ARTICLES</code> object.<br />
+        Follow the documentation: <a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/#rendering-templates">flask.palletsprojects.com/en/1.1.x/quickstart/#rendering-templates</a>.
+      </div>
+
+      <form action="/action_page.php">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="Submit">
+      </form>
+
+      <body>
+      	<ul id="Aricles">
+    	{% for item in articlename %}
+        	<li>{{item.name}}</li>
+    	{% endfor %}
+      </body>
+{% endblock %}
