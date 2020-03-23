@@ -2,16 +2,16 @@
 
 {% block content %}
 
-<h1>About page</h1>
+<h1>À propos </h1>
 
-<p>Today is {{ context['day'] }}.</p>
+<p>Aujourd'hui c'est {{ context['day'] }}.</p>
 
 {% set date = context['date'] %}
 {% set time = context['time'] %}
 
-<p>{% if date.hour|int < 12 and date.hour > 5 %}Good morning!
-{% elif date.hour|int >= 18 and date.hour|int < 22 %}Good evening!
-{% elif date.hour|int >= 22 %}Good night!
-{% endif %} It's {{time}} !</p>
+<p>{% if date.hour|int < 12 and date.hour > 5 %}Bonjour !
+{% elif date.hour|int >= 18 and date.hour|int < 22 %}Bonsoir !
+{% elif date.hour|int >= 22 %}Bonne nuit !
+{% endif %} Il est {{time}} !</p>
 
 {% endblock %}
