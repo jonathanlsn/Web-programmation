@@ -66,7 +66,10 @@ def about(page_title="À propos"):
     app.logger.debug(page_title)
     return render_template('about.html', context=tpl_context,page_title=page_title)
 
-
+@app.route('/articles')
+def articles():
+    return render_template('articles.html')
+    
 @app.route('/test')
 def test():
      resp = make_response('Thanks for all the fish', 501)
