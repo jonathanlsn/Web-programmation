@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>About page</h1>
+
+<p>Today is {{ context['day'] }}.</p>
+
+{% set date = context['date'] %}
+{% set time = context['time'] %}
+
+<p>{% if date.hour|int < 12 and date.hour > 5 %}Good morning!
+{% elif date.hour|int >= 18 and date.hour|int < 22 %}Good evening!
+{% elif date.hour|int >= 22 %}Good night!
+{% endif %} It's {{time}} !</p>
+
+{% endblock %}
