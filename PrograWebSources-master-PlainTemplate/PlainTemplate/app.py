@@ -88,7 +88,6 @@ def search():
             return render_template('article.html',articlename=result)     
 
 
-
 # Script starts here
 if __name__ == '__main__':
     from os import environ
