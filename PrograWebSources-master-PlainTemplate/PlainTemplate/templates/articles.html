@@ -7,17 +7,23 @@
       </div>
 
       <form action="/action_page.php">
-        <label for="fname">First name:</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        <label for="lname">Last name:</label><br>
-        <input type="text" id="lname" name="lname"><br><br>
+        <label for="fname">Titre:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="lname">Auteur:</label><br>
+        <input type="text" id="auteur" name="name"><br>
+        <label for="fname">Texte:</label><br>
+        <input type="text" id="texte" name="name"><br>
+        <label for="fname">Date:</label><br>
+        <input type="text" id="date" name="name"><br>
+        <label for="fname">Réference:</label><br>
+        <input type="text" id="ref" name="ref"><br><br>
         <input type="submit" value="Submit">
       </form>
 
       <body>
       	<ul id="Aricles">
     	{% for item in articlename %}
-        	<li>{{item.name}}</li>
+        	<li>{{item.title}}</li>
     	{% endfor %}
       </body>
 {% endblock %}
