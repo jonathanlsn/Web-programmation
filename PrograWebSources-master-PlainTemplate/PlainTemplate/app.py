@@ -8,6 +8,7 @@ from flask import request, make_response
 from flask import render_template
 
 from data import ARTICLES
+from data import CATEGORIES
 
 app = Flask(__name__)
 
@@ -68,8 +69,25 @@ def about(page_title="À propos"):
 
 @app.route('/articles')
 def articles():
-    return render_template('articles.html')
-    
+    return render_template('articles.html', articlename=ARTICLES)
+
+@app.route('/articles')
+def add_articles():
+    catégorie=request.form['catégorie-select']
+    assert catégorie!=""
+    titre=request.form['titre']
+    auteur=request.form['auteur']
+    texte=request.form['texte']
+    date=request.form['date']
+    ref=request.form['ref']
+    with open(titre+".txt", "w") as fichier:
+        fichier.write(texte)
+    new_article={"id":len(ARTICLES),"auteur":auteur,"titre": titre, "référence": ref,
+     "texte": titre+".txt", "date": date}
+    CATEGORIES[catégorie].append(new_article["id"])
+    return render_template('articles.html', articlename=ARTICLES)
+   
+
 @app.route('/test')
 def test():
      resp = make_response('Thanks for all the fish', 501)

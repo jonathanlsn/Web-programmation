@@ -12,16 +12,16 @@ from datetime import date, datetime
 with open('data.json') as js:
     DATA = json.load(js)
     ARTICLES = DATA.get('ARTICLES')
-    FIELDS = DATA.get('FIELDS')
+    CATEGORIES = DATA.get('CATEGORIES')
 
-def get_fields(a_id):
-    for field, ids in FIELDS.items():
+def get_categories(a_id):
+    for field, ids in CATEGORIES.items():
         if a_id in ids:
             yield field
 
 
-for article in ARTICLES:
-    article.update({'fields': [f for f in get_fields(article.get('id'))]})
+#for article in ARTICLES:
+#    article.update({'categories': [f for f in get_categories(article.get('id'))]})
 
 # Script starts here
 if __name__ == '__main__':

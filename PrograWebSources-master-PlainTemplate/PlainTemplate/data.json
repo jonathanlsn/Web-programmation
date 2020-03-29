@@ -1,16 +1,17 @@
 {
   "ARTICLES" : [
     {"id": 0,
-     "title": "Le coronavirus - Qu’est-ce que c’est ?", "reference": "https://www.santemagazine.fr/sante/maladies/maladies-infectieuses/maladies-virales/tout-savoir-sur-les-infections-respiratoires-a-coronavirus-431783",
-     "text": "", "date": "20/03/2020" },
-    {"id": 1,
-     "title": "", "reference": "",
-     "text": "", "date": "" }
+     "auteur":"Mélanie","titre": "Le coronavirus - Qu’est-ce que c’est ?", "référence": "https://www.santemagazine.fr/sante/maladies/maladies-infectieuses/maladies-virales/tout-savoir-sur-les-infections-respiratoires-a-coronavirus-431783",
+     "texte": "", "date": "20/03/2020" }
 ],
-  "FIELDS" : {
-    "Education": [],
-    "Santé": [0],
-    "Sport": [],
-    "Loisir": []
+
+  "CATEGORIES" : {
+    "Achat": [],
+    "Amour": [],
+    "Cour": [],
+    "Enfants": [],
+    "Films": [],
+    "Monde": [0],
+    "Shopping": []
     }
 }
