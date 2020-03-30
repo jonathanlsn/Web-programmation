@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<style type="text/css">
+  body {
+    font-family: Georgia, "Times New Roman",
+          Times, serif;
+    color: #1d030b;
+    background-color:  #d2def0 }
+  h1 {
+    font-family: Helvetica, Geneva, Arial,
+          SunSans-Regular, sans-serif }
+  </style>
 <h1>À propos </h1>
 
 <p>Aujourd'hui c'est {{ context['day'] }}.</p>
@@ -18,8 +27,9 @@
 
 <p> Nous pensions au départ réalisé un blog sur le sport, mais nous avons trouvé plus cohérent de faire un blog sur notre situation actuelle qu'est le confinement.</p>
 
-<p>Vous avez la possibilité de rajouter des articles si bon vous semble, de lire nos  articles et de rechercher un motif qui sera chercher à la fois dans les tags, les noms des auteurs et dans les titres des articles</p>
+<p>Vous avez la possibilité de rajouter des articles si bon vous semble, de lire nos  articles et de rechercher un motif qui sera chercher à la fois dans les tags, les noms des auteurs et dans les titres des articles.</p>
 
-<p>En cas de problèmes, nous contacter! Bonne lecture et bon confinement. </p>>
+<p>En cas de problèmes, nous contacter!<br>
+Bonne lecture et bon confinement. </p>
 
 {% endblock %}
