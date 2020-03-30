@@ -1,7 +1,7 @@
 {
   "ARTICLES" : [
     {"id": 0,
-     "auteur":"Mélanie","titre": "Le coronavirus - Qu’est-ce que c’est ?", "référence": "https://www.santemagazine.fr/sante/maladies/maladies-infectieuses/maladies-virales/tout-savoir-sur-les-infections-respiratoires-a-coronavirus-431783",
+     "auteur":"Anne","titre": "Le coronavirus - Qu’est-ce que c’est ?", "référence": "https://www.santemagazine.fr/sante/maladies/maladies-infectieuses/maladies-virales/tout-savoir-sur-les-infections-respiratoires-a-coronavirus-431783",
      "texte": "", "date": "20/03/2020" }
 ],
 
