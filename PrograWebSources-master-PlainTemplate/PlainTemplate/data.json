@@ -2,16 +2,30 @@
   "ARTICLES" : [
     {"id": 0,
      "auteur":"Anne","titre": "Le coronavirus - Qu’est-ce que c’est ?", "référence": "https://www.santemagazine.fr/sante/maladies/maladies-infectieuses/maladies-virales/tout-savoir-sur-les-infections-respiratoires-a-coronavirus-431783",
-     "texte": "", "date": "20/03/2020" }
+     "texte": "", "date": "20/03/2020" },{"id": 2,
+     "auteur":"Paulo Frances","titre": "Achat compulsif", "référence": "",
+     "texte": "achat.txt", "date": "23/03/2020" },{"id": 3,
+     "auteur":"Paulo Frances","titre": "Les films de Noël", "référence": "",
+     "texte": "films.txt", "date": "21/03/2020" },{"id": 5,
+     "auteur":"Paulo Frances","titre": "L’amour et le coronavirus", "référence": "https://www.elle.fr/Love-Sexe/News/Coronavirus-6-conseils-pour-que-notre-couple-survive-au-confinement-3861771",
+     "texte": "films.txt", "date": "24/03/2020" },{"id": 7,
+     "auteur":"Paulo Frances","titre": "Education des jeunes enfants", "référence": "",
+     "texte": "enfants.txt", "date": "19/03/2020" },{"id": 9,
+     "auteur":"Paulo Frances","titre": "Fermeture des activités", "référence": "",
+     "texte": "shopping.txt", "date": "25/03/2020" },{"id": 11,
+     "auteur":"Paulo Frances","titre": "Les cours", "référence": "",
+     "texte": "cours.txt", "date": "21/03/2020" },{"id": 13,
+     "auteur":"Paulo Frances","titre": "Les cours", "référence": "",
+     "texte": "cours.txt", "date": "21/03/2020" }
 ],
 
   "CATEGORIES" : {
-    "Achat": [],
-    "Amour": [],
-    "Cour": [],
-    "Enfants": [],
-    "Films": [],
+    "Achat": [2,9],
+    "Amour": [5],
+    "Cours": [11],
+    "Enfants": [3,7,11],
+    "Films": [3],
     "Monde": [0],
-    "Shopping": []
+    "Shopping": [2,9]
     }
 }
