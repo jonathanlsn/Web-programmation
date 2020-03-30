@@ -1,7 +1,7 @@
 {
   "ARTICLES" : [
     {"id": 0,
-     "auteur":"Mélanie","titre": "Le coronavirus - Qu’est-ce que c’est ?", "référence": "https://www.santemagazine.fr/sante/maladies/maladies-infectieuses/maladies-virales/tout-savoir-sur-les-infections-respiratoires-a-coronavirus-431783",
+     "auteur":"Santé Magazine","titre": "Le coronavirus - Qu’est-ce que c’est ?", "référence": "https://www.santemagazine.fr/sante/maladies/maladies-infectieuses/maladies-virales/tout-savoir-sur-les-infections-respiratoires-a-coronavirus-431783",
      "texte": "Le_coronavirus.txt", "date": "20/03/2020" },
 
     {"id" : 1,
@@ -27,6 +27,7 @@
     {"id" : 12,
      "auteur" : "Morgan Fromentin", "titre":"Faire face au confinement avec Netflix party", "référence" : "https://www.begeek.fr/netflix-party-vous-laisse-regarder-vos-series-et-films-preferes-a-plusieurs-pendant-le-confinement-339066", 
     "texte" : "Netflix_Party.txt", "date": "21/03/2020" },
+
 ],
 
   "CATEGORIES" : {
