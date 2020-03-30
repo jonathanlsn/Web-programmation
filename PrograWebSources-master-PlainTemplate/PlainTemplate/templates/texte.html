@@ -2,11 +2,11 @@
 
 {% block content %}
 
-<h1>Liste</h1>
+	<h1>Liste</h1>
 
-      <ul>
-	   {% for item in liste_article %}
-	    <li><a href="/users/{{ item.name }}">{{ item.name }}</a></li>
+    <ul>
+	   {% for k,v in article.items() %}
+	    <li><a href="">{{ k }}</a></li>
 	   {% endfor %}
 	  </ul>
 
