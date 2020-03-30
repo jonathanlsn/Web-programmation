@@ -2,7 +2,7 @@
 Projet de programmation Web - séances de projets
 
 <div style="display: flex; justify-content: center;">
- <img src="logo.jpg" height="250">
+ <img src="logo.png" height="250">
 </div>
 
 ### Authors:
