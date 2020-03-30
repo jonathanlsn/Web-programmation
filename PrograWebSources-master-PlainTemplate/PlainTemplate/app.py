@@ -67,6 +67,14 @@ def about(page_title="À propos"):
     app.logger.debug(page_title)
     return render_template('about.html', context=tpl_context,page_title=page_title)
 
+@app.route('/texte')
+@app.route('/texte/<articles>/')
+def read_article(article=None):
+    app.logger.debug('texte')
+    if article==None:
+        return render_template('texte.html',article=CATEGORIE)
+    
+
 @app.route('/articles')
 def articles():
     return render_template('articles.html', articlename=ARTICLES)
