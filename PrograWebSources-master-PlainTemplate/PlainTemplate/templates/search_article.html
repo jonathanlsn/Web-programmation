@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+      <body>
+
+	{% if pattern != NONE and titre != [] %}
+        	Recherche pour : "{{ pattern}}"
+      	{% endif %}
+
+	{% if titre == [] %}
+		Pas de résultat pour : "{{pattern}}"
+	{% endif %}
+        <ul>
+      	{% for user in titre %}
+        	<li> <a href = "/articles/{{user.titre}}" + ".html"> {{ user.titre }}</a></li>
+      	{% endfor %}
+      </ul>
+
+      </body>
+{% endblock %}
