@@ -1,16 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-<style type="text/css">
-  body {
-    font-family: Georgia, "Times New Roman",
-          Times, serif;
-    color: #1d030b;
-    background-color:  #d2def0 }
-  h1 {
-    font-family: Helvetica, Geneva, Arial,
-          SunSans-Regular, sans-serif }
-  </style>
 <h1>À propos </h1>
 
 <p>Aujourd'hui c'est {{ context['day'] }}.</p>
@@ -32,6 +22,10 @@
 
 <p>En cas de problèmes, nous contacter!<br>
 Bonne lecture et bon confinement. </p>
+
+<input value="Click me"
+    type="button"
+    onclick="alert('Click!')" >
 
 <center>
 <img src="{{url_for('static', filename='image/logo.png',width="25")}}" />

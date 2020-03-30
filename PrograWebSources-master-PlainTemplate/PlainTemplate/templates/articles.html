@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-      <h1 class="mt-5">Articles</h1>
+      <h1 class="mt-5">Articles </h1>
 
       <form action="/action_page.php">
         <select name="catégorie" id="catégorie-select">
@@ -27,17 +27,7 @@
         <input type="submit" value="Submit">
       </form>
       <style type="text/css">
-  body {
-    font-family: Georgia, "Times New Roman",
-          Times, serif;
-    color: #1d030b;
-    background-color:  #d2def0 }
-  h1 {
-    font-family: Helvetica, Geneva, Arial,
-          SunSans-Regular, sans-serif }
-  </style>
-      <body>
-<hr/>
+     <hr/>
       	<ul id="Articles">
     	{% for item in articlename %}
         	<li>{{item.titre}}</li>
