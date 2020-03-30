@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
+import copy
+
 from datetime import datetime
 
 from flask import Flask
@@ -102,6 +104,7 @@ def search():
     if (request.method=="GET"):
         u = []
         a = []
+        c = []
 
         for i in ARTICLES:
             n = i["titre"].lower()
@@ -113,8 +116,25 @@ def search():
 
             if aut.find(pat) != -1 :
                 a.append(i)
+        
+        for j in CATEGORIES:
+            pat = request.args["pattern"].lower()
+            if j.lower().find(pat) != -1 :
+                for b in CATEGORIES[j] :
+                    for i in ARTICLES :
+                        if b == i["id"] :
+                            c.append(i)
 
-    return render_template('search_article.html', titre=u, auteur = a, pattern = request.args["pattern"])
+
+        t = copy.deepcopy(u)
+        for i in a:
+            if i not in t:
+                t.append(i)
+        for i in c:
+            if i not in t:
+                t.append(i)
+ 
+    return render_template('search_article.html', titre=u, auteur = a, total = t, categorie = c, pattern = request.args["pattern"])
 
 
 # Script starts here
