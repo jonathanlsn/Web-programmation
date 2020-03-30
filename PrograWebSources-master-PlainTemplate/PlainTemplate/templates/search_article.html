@@ -4,18 +4,29 @@
 
       <body>
 
-	{% if pattern != NONE and titre != [] %}
-        	Recherche pour : "{{ pattern}}"
+	{% if pattern != NONE %}
+        	{% if titre != [] %}
+			Recherche par titre : "{{ pattern}}"
+		{% endif %}
+		{%if auteur != [] %}
+			Recherche par auteur : "{{ pattern}}"
+		{% endif %}
       	{% endif %}
 
-	{% if titre == [] %}
-		Pas de résultat pour : "{{pattern}}"
+	{% if titre == [] and auteur == [] %}
+		Pas de résultat (ni titre, ni auteur) pour : "{{pattern}}"
 	{% endif %}
         <ul>
       	{% for user in titre %}
         	<li> <a href = "/articles/{{user.titre}}" + ".html"> {{ user.titre }}</a></li>
       	{% endfor %}
       </ul>
+
+	<ul>
+      	{% for aut in auteur %}
+        	<li> <a href = "/articles/{{aut.titre}}" + ".html"> {{ aut.titre }}</a></li>
+      	{% endfor %}
+      	</ul>
 
       </body>
 {% endblock %}
