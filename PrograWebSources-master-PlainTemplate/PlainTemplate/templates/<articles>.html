@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Liste</h1>
+
+      <ul>
+	   {% for k,v in username.items() %}
+	    <li>{{k}} : {{v}}</li>
+	   {% endfor %}
+	  </ul>
+
+{% endblock %}
