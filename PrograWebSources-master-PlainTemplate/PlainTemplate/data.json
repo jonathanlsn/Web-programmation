@@ -2,16 +2,41 @@
   "ARTICLES" : [
     {"id": 0,
      "auteur":"Mélanie","titre": "Le coronavirus - Qu’est-ce que c’est ?", "référence": "https://www.santemagazine.fr/sante/maladies/maladies-infectieuses/maladies-virales/tout-savoir-sur-les-infections-respiratoires-a-coronavirus-431783",
-     "texte": "", "date": "20/03/2020" }
+     "texte": "Le_coronavirus.txt", "date": "20/03/2020" },
+
+    {"id" : 1,
+     "auteur" : "Mathilde Damgé", "titre":"Le confinement", "référence" : "https://www.lemonde.fr/les-decodeurs/article/2020/03/18/coronavirus-nos-reponses-a-vos-questions-sur-le-confinement_6033490_4355770.html", 
+    "texte" : "Le_confinement.txt", "date": "18/03/2020" },
+
+    {"id" : 4,
+     "auteur" : "France Inter", "titre":"Le sport à la maison", "référence" : "https://www.franceinter.fr/sports/faire-du-sport-a-la-maison-comment-faire-bouger-sa-vie-de-confine", 
+    "texte" : "Le_sport_a_la_maison.txt", "date": "20/03/2020" },
+
+    {"id" : 6,
+     "auteur" : "Guillaume Champeau", "titre":"Coronavirus : 10 conseils pour réussir son téletravail", "référence" : "https://www.linkedin.com/pulse/10-conseils-pour-du-t%C3%A9l%C3%A9travail-efficace-et-bien-v%C3%A9cu-champeau/", 
+    "texte" : "Conseil_Teletravail.txt", "date": "20/03/2020" },
+
+    {"id" : 8,
+     "auteur" : "François Hamelin", "titre":"Confinement : Tous au balcon!", "référence" : "https://actu.fr/auvergne-rhone-alpes/lyon_69123/coronavirus-lyon-confines-lyonnais-sortent-lumignons-afficher-leur-solidarite_32286599.html", 
+    "texte" : "Tous_au_balcon.txt", "date": "17/03/2020" },
+
+    {"id" : 10,
+     "auteur" : "Feel Good", "titre":"pendant le confinement, c'est APERO SKYPE!", "référence" : "https://www.madmoizelle.com/confinement-apero-skype-1045973", 
+    "texte" : "Skypero.txt", "date": "18/03/2020" },
+
+    {"id" : 12,
+     "auteur" : "Morgan Fromentin", "titre":"Faire face au confinement avec Netflix party", "référence" : "https://www.begeek.fr/netflix-party-vous-laisse-regarder-vos-series-et-films-preferes-a-plusieurs-pendant-le-confinement-339066", 
+    "texte" : "Netflix_Party.txt", "date": "21/03/2020" },
 ],
 
   "CATEGORIES" : {
     "Achat": [],
     "Amour": [],
-    "Cour": [],
-    "Enfants": [],
+    "Travail": [6],
+    "Activité": [2,4, 8, 10]
+    "Enfants": [4, 8],
     "Films": [],
-    "Monde": [0],
+    "Monde": [0, 1, 8],
     "Shopping": []
     }
 }
