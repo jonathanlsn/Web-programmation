@@ -70,11 +70,24 @@ def about(page_title="À propos"):
     return render_template('about.html', context=tpl_context,page_title=page_title)
 
 @app.route('/texte')
-@app.route('/texte/<articles>/')
+@app.route('/texte/<article>/')
 def texte(article=None):
-    app.logger.debug('texte')
+    app.logger.debug(request.args)
     if article==None:
         return render_template('texte.html',article=CATEGORIES)
+    elif article in CATEGORIES:
+        liste=CATEGORIES[article]
+        articles = []
+        for num in liste:
+            for dico in ARTICLES:
+                if dico["id"] == num:
+                    articles.append(dico)
+        return render_template('<articles>.html',articles=articles,vname=article,vcat=CATEGORIES)
+    else:
+        for dico in ARTICLES:
+            if dico["titre"] == article:
+                articles=dico
+        return render_template('<articles>.html',article=articles)
     
 
 @app.route('/articles')
