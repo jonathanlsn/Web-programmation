@@ -34,9 +34,9 @@
     "Achat": [],
     "Amour": [],
     "Travail": [6],
-    "Activité": [2,4, 8, 10]
+    "Activité": [2,4, 8, 10, 12]
     "Enfants": [4, 8],
-    "Films": [],
+    "Films": [12],
     "Monde": [0, 1, 8],
     "Shopping": []
     }
