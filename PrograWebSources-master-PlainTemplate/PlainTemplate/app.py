@@ -101,13 +101,20 @@ def search():
     app.logger.debug(request.args)
     if (request.method=="GET"):
         u = []
+        a = []
+
         for i in ARTICLES:
             n = i["titre"].lower()
+            aut = i["auteur"].lower()
+
             pat = request.args["pattern"].lower()
             if n.find(pat) != -1 :
                 u.append(i)
 
-    return render_template('search_article.html', titre=u, pattern = request.args["pattern"])
+            if aut.find(pat) != -1 :
+                a.append(i)
+
+    return render_template('search_article.html', titre=u, auteur = a, pattern = request.args["pattern"])
 
 
 # Script starts here
