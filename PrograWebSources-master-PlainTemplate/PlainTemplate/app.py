@@ -81,6 +81,8 @@ def texte(article=None):
 def articles():
     return render_template('articles.html', articlename=ARTICLES)
 
+
+
 @app.route('/articles')
 def add_articles():
     catégorie=request.form['catégorie-select']
