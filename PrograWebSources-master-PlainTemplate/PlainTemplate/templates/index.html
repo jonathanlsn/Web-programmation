@@ -1,9 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>S'occuper pendant le confinement</h1>
-
-<p>N'oubliez pas de vous laver les mains et de rester chez vous !</p>
+<style type="text/css">
+  body {
+    font-family: Georgia, "Times New Roman",
+          Times, serif;
+    color: #1d030b;
+    background-color:  #d2def0 }
+  h1 {
+    font-family: Helvetica, Geneva, Arial,
+          SunSans-Regular, sans-serif }
+  </style>
+<h1> S'occuper pendant le confinement</h1>
+<p style="color:rgba(255,0,0,0.5);">N'oubliez pas de vous laver les mains et de rester chez vous !</p>
 
     <ul class>
       <li><a href="{{ url_for('index') }}#home">Achat</a></li>
