@@ -100,15 +100,14 @@ def test():
 def search():
     app.logger.debug(request.args)
     if (request.method=="GET"):
-        wordsearch=request.args.get("pattern",'')
-        result=[]
-        for article in ARTICLES:
-            if wordsearch.lower() in article["name"].lower() :
-                result.append(article)
-        if result==[]:
-            return render_template('article.html',articlename=ARTICLES)
-        else:
-            return render_template('article.html',articlename=result)     
+        u = []
+        for i in ARTICLES:
+            n = i["titre"].lower()
+            pat = request.args["pattern"].lower()
+            if n.find(pat) != -1 :
+                u.append(i)
+
+    return render_template('search_article.html', titre=u, pattern = request.args["pattern"])
 
 
 # Script starts here
