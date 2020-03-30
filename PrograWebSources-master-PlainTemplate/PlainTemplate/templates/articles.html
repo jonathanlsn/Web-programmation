@@ -2,12 +2,13 @@
 {% block content %}
       <h1 class="mt-5">Articles </h1>
 
-      <form action="/action_page.php">
-        <select name="catégorie" id="catégorie-select">
+      <form action="" method="post">
+        <select name="categorie" id="categorie">
         <option value="">--Veuillez choisir une catégorie--</option>
         <option value="Achat">Achat</option>
         <option value="Amour">Amour</option>
-        <option value="Cours">Cours</option>
+        <option value="Travail">Travail</option>
+        <option value="Activité">Activité</option>
         <option value="Enfants">Enfants</option>
         <option value="Films">Films</option>
         <option value="Monde">Monde</option>
@@ -15,16 +16,16 @@
         </select><br><br>
 
         <label for="fname">Titre:</label><br>
-        <input type="text" id="titre" name="name"><br>
+        <input type="text" id="titre" name="titre"><br>
         <label for="lname">Auteur:</label><br>
-        <input type="text" id="auteur" name="name"><br>
+        <input type="text" id="auteur" name="auteur"><br>
         <label for="fname">Texte:</label><br>
-        <input type="text" id="texte" name="name"><br>
+        <input type="text" id="texte" name="texte"><br>
         <label for="fname">Date:</label><br>
-        <input type="text" id="date" name="name"><br>
+        <input type="text" id="date" name="date"><br>
         <label for="fname">Réference:</label><br>
         <input type="text" id="ref" name="ref"><br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit"><br><br>
       </form>
       <style type="text/css">
      <hr/>

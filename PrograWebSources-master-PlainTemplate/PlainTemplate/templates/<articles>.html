@@ -3,10 +3,16 @@
 {% block content %}
 <h1>Liste</h1>
 
-      <ul>
-	   {% for k,v in article.items() %}
-	    <li>{{k}} </li>
+    <ul>
+	   {% if vname in vcat %}
+	   {% for item in articles %}
+	     <li><a href="/texte/{{ item.titre }}">{{ item.titre}}</a></li>
 	   {% endfor %}
+	   {% else %}
+     {% for k,v in article.items() %}
+	    <li>{{k}} : {{v}}</li>
+	   {% endfor %}
+	   {% endif %}
 	  </ul>
 
 {% endblock %}

@@ -70,31 +70,50 @@ def about(page_title="À propos"):
     return render_template('about.html', context=tpl_context,page_title=page_title)
 
 @app.route('/texte')
-@app.route('/texte/<articles>/')
+@app.route('/texte/<article>/')
 def texte(article=None):
-    app.logger.debug('texte')
+    app.logger.debug(request.args)
     if article==None:
         return render_template('texte.html',article=CATEGORIES)
+    elif article in CATEGORIES:
+        liste=CATEGORIES[article]
+        articles = []
+        for num in liste:
+            for dico in ARTICLES:
+                if dico["id"] == num:
+                    articles.append(dico)
+        return render_template('<articles>.html',articles=articles,vname=article,vcat=CATEGORIES)
+    else:
+        for dico in ARTICLES:
+            if dico["titre"] == article:
+                articles=dico
+        return render_template('<articles>.html',article=articles)
     
 
 @app.route('/articles')
 def articles():
     return render_template('articles.html', articlename=ARTICLES)
 
-@app.route('/articles')
-def add_articles():
-    catégorie=request.form['catégorie-select']
+
+
+@app.route('/articles', methods=["POST"])
+def add():
+    categorie=request.form['categorie']
     assert catégorie!=""
     titre=request.form['titre']
     auteur=request.form['auteur']
     texte=request.form['texte']
     date=request.form['date']
     ref=request.form['ref']
-    with open(titre+".txt", "w") as fichier:
+
+    with open("./articles_file/"+titre+".txt", "a") as fichier:
         fichier.write(texte)
+
     new_article={"id":len(ARTICLES),"auteur":auteur,"titre": titre, "référence": ref,
      "texte": titre+".txt", "date": date}
-    CATEGORIES[catégorie].append(new_article["id"])
+   
+    ARTICLES.append(new_article)
+    CATEGORIES[categorie].append(new_article["id"])
     return render_template('articles.html', articlename=ARTICLES)
    
 
