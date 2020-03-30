@@ -83,20 +83,24 @@ def articles():
 
 
 
-@app.route('/articles')
-def add_articles():
-    catégorie=request.form['catégorie-select']
+@app.route('/articles', methods=["POST"])
+def add():
+    categorie=request.form['categorie']
     assert catégorie!=""
     titre=request.form['titre']
     auteur=request.form['auteur']
     texte=request.form['texte']
     date=request.form['date']
     ref=request.form['ref']
-    with open(titre+".txt", "w") as fichier:
+
+    with open("./articles_file/"+titre+".txt", "a") as fichier:
         fichier.write(texte)
+
     new_article={"id":len(ARTICLES),"auteur":auteur,"titre": titre, "référence": ref,
      "texte": titre+".txt", "date": date}
-    CATEGORIES[catégorie].append(new_article["id"])
+   
+    ARTICLES.append(new_article)
+    CATEGORIES[categorie].append(new_article["id"])
     return render_template('articles.html', articlename=ARTICLES)
    
 
