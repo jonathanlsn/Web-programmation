@@ -69,10 +69,10 @@ def about(page_title="À propos"):
 
 @app.route('/texte')
 @app.route('/texte/<articles>/')
-def read_article(article=None):
+def texte(article=None):
     app.logger.debug('texte')
     if article==None:
-        return render_template('texte.html',article=CATEGORIE)
+        return render_template('texte.html',article=CATEGORIES)
     
 
 @app.route('/articles')
