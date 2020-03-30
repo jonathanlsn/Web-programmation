@@ -26,8 +26,18 @@
         <input type="text" id="ref" name="ref"><br><br>
         <input type="submit" value="Submit">
       </form>
-
+      <style type="text/css">
+  body {
+    font-family: Georgia, "Times New Roman",
+          Times, serif;
+    color: #1d030b;
+    background-color:  #d2def0 }
+  h1 {
+    font-family: Helvetica, Geneva, Arial,
+          SunSans-Regular, sans-serif }
+  </style>
       <body>
+<hr/>
       	<ul id="Articles">
     	{% for item in articlename %}
         	<li>{{item.titre}}</li>

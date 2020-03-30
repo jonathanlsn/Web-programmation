@@ -4,7 +4,7 @@
 import copy
 
 from datetime import datetime
-
+from flask import Flask, render_template, url_for
 from flask import Flask
 from flask import request, make_response
 from flask import render_template
@@ -51,7 +51,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/about')
+@app.route('/about', methods=['GET', 'POST'])
 def about(page_title="À propos"):
     app.logger.debug('about')
     today = datetime.today()
