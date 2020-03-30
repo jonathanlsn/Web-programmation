@@ -71,7 +71,7 @@ def about(page_title="À propos"):
 def articles():
     return render_template('articles.html', articlename=ARTICLES)
 
-@app.route('/articles')
+@app.route('/articles', methods=['POST'])
 def add_articles():
     catégorie=request.form['catégorie-select']
     assert catégorie!=""
@@ -103,7 +103,7 @@ def search():
         wordsearch=request.args.get("pattern",'')
         result=[]
         for article in ARTICLES:
-            if wordsearch.lower() in article["name"].lower() :
+            if wordsearch.lower() in article["titre"].lower() :
                 result.append(article)
         if result==[]:
             return render_template('article.html',articlename=ARTICLES)
