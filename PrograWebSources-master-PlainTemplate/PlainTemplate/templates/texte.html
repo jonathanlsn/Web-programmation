@@ -7,12 +7,21 @@
         <p class="lead"> La requête que vous demandez ne correspond aucun article. Assurez vous d'avoir bien tapé votre requête ou sélectionnez l'article que vous cherchez dans la liste suivante</a>.</div>
 	{% endif %}
 	
+	{% if articlename %}
+	<h1>Liste</h1>
+	<ul>
+	   {% for article in articlename %}
+	    <li><a href="/texte/{{ article.titre }}">{{ article.titre }}</a></li>
+	   {% endfor %}
+	</ul>
+		
+	{% else %}
 	<h1>Catégories</h1>
     <ul>
 	   {% for k,v in article.items() %}
 	    <li><a href="/texte/{{ k }}">{{ k }}</a></li>
 	   {% endfor %}
 	</ul>
-
+	{% endif %}
 
 {% endblock %}
