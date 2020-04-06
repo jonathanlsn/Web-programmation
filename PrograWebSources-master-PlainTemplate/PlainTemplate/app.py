@@ -101,7 +101,8 @@ def articles():
 
 @app.route('/articles', methods=['POST'])
 def add_articles():
-    catégorie=request.form['catégorie-select']
+    app.logger.debug(request.form)
+    catégorie=request.form['categorie']
     assert catégorie!=""
     titre=request.form['titre']
     auteur=request.form['auteur']
