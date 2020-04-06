@@ -23,14 +23,43 @@
 <p>En cas de problèmes, nous contacter!<br>
 Bonne lecture et bon confinement. </p>
 
-<input value="Click me"
-    type="button"
-    onclick="alert('Click!')" >
+<p><strong>Pour tester vos connaissances sur le sujet et voir si vous avez regardé nos articles, voici un petit questionnaire: </strong></p>
+
+<div>Qu'est ce que le coronavirus ?</div>
+<div>
+<input name="serie1" id="serie1a" type="radio">Une marque de bière<br>
+<input name="serie1" id="serie1b" type="radio">Un mythe américain<br>
+<input name="serie1" id="serie1c" type="radio">Un virus<br>
+</div>
+<div align="center"><input type="button" onClick="valider()" value="Valider"></div>
+
+<div>Pouvons nous sortir pendant le coronavirus ?</div>
+<div>
+<input name="serie1" id="serie1d" type="radio">Pour acheter de la bière, toujours ! <br>
+<input name="serie1" id="serie1e" type="radio">Seulement en cas de nécessité <br>
+<input name="serie1" id="serie1f" type="radio">Oui, pourquoi se priver?<br>
+</div>
+<div align="center"><input type="button" onClick="valider1()" value="Valider"></div>
+
+<div>La situation dans les couples ?</div>
+<div>
+<input name="serie1" id="serie1g" type="radio">Le confinement c'est le rêve non? <br>
+<input name="serie1" id="serie1h" type="radio">Cela dépend des couples <br>
+<input name="serie1" id="serie1i" type="radio">Des problèmes chaque jours...<br>
+</div>
+<div align="center"><input type="button" onClick="valider2()" value="Valider"></div>
+
+<div>Que faire pendant le confinement ?</div>
+<div>
+<input name="serie1" id="serie1j" type="radio">Les entreprises proposent des activités, du sport, des films...<br>
+<input name="serie1" id="serie1k" type="radio">Il n'y a rien à faire<br>
+<input name="serie1" id="serie1l" type="radio">Aller voir ses amis dans le bar du coin...<br>
+</div>
+<div align="center"><input type="button" onClick="valider3()" value="Valider"></div>
+
 
 <center>
 <img src="{{url_for('static', filename='image/logo.png',width="25")}}" />
 </center>
-
-
 
 {% endblock %}

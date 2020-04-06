@@ -1,20 +1,33 @@
 // Add your JS code here
-<script language="javascript">
 
-function afficheMessage() {
-
-var rep=prompt('Quel est le prénom dEinstein ?');
-
-if (rep=="Albert"||rep=="ALBERT") {
-
-alert('BRAVO !!!');
-
+function valider() {
+if (document.getElementById('serie1c').checked) {
+alert('Bravo !!!')
 } else {
-
-alert('Réponse incorrecte !');
-
+alert('Votre réponse est incorrecte...')
+}
 }
 
-};
+function valider1() {
+if (document.getElementById('serie1e').checked) {
+alert('Bravo !!!')
+} else {
+alert('Votre réponse est incorrecte...')
+}
+}
 
-</script>
+function valider2() {
+if (document.getElementById('serie1h').checked) {
+alert('Bravo !!!')
+} else {
+alert('Votre réponse est incorrecte...')
+}
+}
+
+function valider3() {
+if (document.getElementById('serie1j').checked) {
+alert('Bravo !!!')
+} else {
+alert('Votre réponse est incorrecte...')
+}
+}
