@@ -27,3 +27,14 @@ li a.active {
   color: white;
   background-color: #4CAF50;
 }
+
+p b {
+  color:rgba(255,0,0,0.5);
+}
+
+body{
+font-family: Georgia, "Times New Roman",
+          Times, serif;
+    color: #1d030b;
+    background-color:  #d2def0;
+}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+      <body>
+
+	{% if pattern != NONE %}
+        	{% if titre != [] %}
+			Recherche par titre : "{{ pattern}}"
+		{% endif %}
+		{%if auteur != [] %}
+			Recherche par auteur : "{{ pattern}}"
+		{% endif %}
+		{%if categorie != [] %}
+			Recherche par catégorie : "{{ pattern}}"
+		{% endif %}
+      	{% endif %}
+
+	{% if titre == [] and auteur == [] and categorie == []%}
+		Pas de résultat (ni titre, ni auteur, ni catégorie) pour : "{{pattern}}"
+	{% endif %}
+
+
+	<ul>
+	{% if a != [] and u != [] and categorie !=[] %}
+      	{% for t in total %}
+        	<li> <a href = "/articles/{{t.titre}}" + ".html"> {{ t.titre }}</a></li>
+      	{% endfor %}
+	{% endif %}
+      </ul>
+
+        <ul>
+	{% if a == [] and categorie==[] %}
+      	{% for user in titre %}
+        	<li> <a href = "/articles/{{user.titre}}" + ".html"> {{ user.titre }}</a></li>
+      	{% endfor %}
+	{% endif %}
+      </ul>
+
+	<ul>
+	{% if u == [] and categorie==[] %}
+      	{% for aut in auteur %}
+        	<li> <a href = "/articles/{{aut.titre}}" + ".html"> {{ aut.titre }}</a></li>
+      	{% endfor %}
+	{% endif %}
+      	</ul>
+
+	<ul>
+	{% if u == [] and a == [] %}
+      	{% for cat in categorie %}
+        	<li> <a href = "/articles/{{cat.titre}}" + ".html"> {{ cat.titre }}</a></li>
+      	{% endfor %}
+	{% endif %}
+
+      	</ul>
+      </body>
+{% endblock %}

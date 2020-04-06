@@ -2,12 +2,13 @@
 {% block content %}
       <h1 class="mt-5">Articles</h1>
 
-      <form action="/action_page.php">
-        <select name="catégorie" id="catégorie-select">
+      <form action="" method="post">
+        <select name="categorie" id="categorie">
         <option value="">--Veuillez choisir une catégorie--</option>
         <option value="Achat">Achat</option>
         <option value="Amour">Amour</option>
-        <option value="Cours">Cours</option>
+        <option value="Travail">Travail</option>
+        <option value="Activité">Activité</option>
         <option value="Enfants">Enfants</option>
         <option value="Films">Films</option>
         <option value="Monde">Monde</option>
@@ -25,10 +26,11 @@
 
         <label for="ref">Réference:</label><br>
         <input type="text" id="ref" name="ref"><br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit"><br><br>
       </form>
-
-      <body>
+      <style type="text/css">
+     
+     <hr/>
       	<ul id="Articles">
     	{% for item in articlename %}
         	<li><a href="{{ url_for('index') }}#home">{{item.titre}}</a></li>

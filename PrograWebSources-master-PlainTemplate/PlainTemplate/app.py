@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
-from datetime import datetime
+import copy
 
+from datetime import datetime
+from flask import Flask, render_template, url_for
 from flask import Flask
 from flask import request, make_response
 from flask import render_template
@@ -49,7 +51,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/about')
+@app.route('/about', methods=['GET', 'POST'])
 def about(page_title="À propos"):
     app.logger.debug('about')
     today = datetime.today()
@@ -67,9 +69,31 @@ def about(page_title="À propos"):
     app.logger.debug(page_title)
     return render_template('about.html', context=tpl_context,page_title=page_title)
 
+@app.route('/texte')
+@app.route('/texte/<article>/')
+def texte(article=None):
+    app.logger.debug(request.args)
+    if article==None:
+        return render_template('texte.html',article=CATEGORIES)
+    elif article in CATEGORIES:
+        liste=CATEGORIES[article]
+        articles = []
+        for num in liste:
+            for dico in ARTICLES:
+                if dico["id"] == num:
+                    articles.append(dico)
+        return render_template('<articles>.html',articles=articles,vname=article,vcat=CATEGORIES)
+    else:
+        for dico in ARTICLES:
+            if dico["titre"] == article:
+                articles=dico
+        return render_template('<articles>.html',article=articles)
+    
+
 @app.route('/articles')
 def articles():
     return render_template('articles.html', articlename=ARTICLES)
+
 
 @app.route('/articles', methods=['POST'])
 def add_articles():
@@ -80,10 +104,11 @@ def add_articles():
     texte=request.form['texte']
     date=request.form['date']
     ref=request.form['ref']
-    with open(titre+".txt", "w") as fichier:
+    with open("./articles_file/"+titre+".txt", "a") as fichier:
         fichier.write(texte)
     new_article={"id":len(ARTICLES),"auteur":auteur,"titre": titre, "référence": ref,
-     "texte": titre+".txt", "date": date}
+     "texte": titre+".txt", "date": date}  
+    ARTICLES.append(new_article)
     CATEGORIES[catégorie].append(new_article["id"])
     return render_template('articles.html', articlename=ARTICLES)
    
@@ -101,14 +126,28 @@ def search():
     app.logger.debug(request.args)
     if (request.method=="GET"):
         wordsearch=request.args.get("pattern",'')
-        result=[]
+        id_list,result=[],[]
         for article in ARTICLES:
             if wordsearch.lower() in article["titre"].lower() :
-                result.append(article)
+                id_list.append(article["id"])
+            elif wordsearch.lower() in article["auteur"].lower() :
+                id_list.append(article["id"])
+        for categorie, ID in CATEGORIES.items():
+            if wordsearch.lower() in categorie.lower():
+                for identifiant in ID:
+                    id_list.append(identifiant)
+        id_list=list(set(id_list)) #suppression des doublons
+        for ID in id_list:
+            for article in ARTICLES:
+                if article["id"]==ID:
+                    result.append(article)
+                    break
         if result==[]:
-            return render_template('article.html',articlename=ARTICLES)
+            return render_template('texte.html',articlename=ARTICLES, error="true")
         else:
-            return render_template('article.html',articlename=result)     
+            return render_template('texte.html',articlename=result)     
+
+        
 
 
 # Script starts here

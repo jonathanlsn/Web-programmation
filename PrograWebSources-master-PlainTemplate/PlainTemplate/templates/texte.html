@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+	
+	{% if error %}
+	<div class="alert alert-info" role="alert" style="background-color:coral">
+        <p class="lead"> La requête que vous demandez ne correspond aucun article. Assurez vous d'avoir bien tapé votre requête ou sélectionnez l'article que vous cherchez dans la liste suivante</a>.</div>
+	{% endif %}
+	<h1>Liste</h1>
+
+	{% if articlename %}
+	<ul>
+	   {% for article in articlename %}
+	    <li><a href="/texte/{{ article.titre }}">{{ article.titre }}</a></li>
+	   {% endfor %}
+	</ul>
+		
+	{% else %}
+    <ul>
+	   {% for k,v in article.items() %}
+	    <li><a href="/texte/{{ k }}">{{ k }}</a></li>
+	   {% endfor %}
+	</ul>
+	{% endif %}
+{% endblock %}
