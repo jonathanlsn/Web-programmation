@@ -1,6 +1,6 @@
 {
   "ARTICLES" : [
-    {"id": 0,"auteur":"Santé Magazine","titre": "Le coronavirus - Qu’est-ce que c’est ?", "référence": "https://www.santemagazine.fr/sante/maladies/maladies-infectieuses/maladies-virales/tout-savoir-sur-les-infections-respiratoires-a-coronavirus-431783",
+    {"id": 0,"auteur":"Santé Magazine","titre": "Le coronavirus", "référence": "https://www.santemagazine.fr/sante/maladies/maladies-infectieuses/maladies-virales/tout-savoir-sur-les-infections-respiratoires-a-coronavirus-431783",
      "texte": "articles_file/Le_coronavirus.txt", "date": "20/03/2020" },
     {"id" : 1,
      "auteur" : "Mathilde Damgé", "titre":"Le confinement", "référence" : "https://www.lemonde.fr/les-decodeurs/article/2020/03/18/coronavirus-nos-reponses-a-vos-questions-sur-le-confinement_6033490_4355770.html", 
