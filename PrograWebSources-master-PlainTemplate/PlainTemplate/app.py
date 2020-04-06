@@ -101,12 +101,12 @@ def articles():
 
 @app.route('/articles', methods=['POST'])
 def add_articles():
-    catégorie=request.form['catégorie-select']
-    assert catégorie!=""
+    categorie=request.form['categorie']
+    assert categorie!=""
     titre=request.form['titre']
     auteur=request.form['auteur']
-    texte=request.form['texte']
     date=request.form['date']
+    texte=request.form['texte']
     ref=request.form['ref']
     with open("./articles_file/"+titre+".txt", "a") as fichier:
         fichier.write(texte)
