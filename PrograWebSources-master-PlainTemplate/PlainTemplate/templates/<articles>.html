@@ -1,18 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Liste</h1>
+
 
     <ul>
 	   {% if vname in vcat %}
+	   <h1>Liste</h1>
 	   {% for item in articles %}
 	     <li><a href="/texte/{{ item.titre }}">{{ item.titre}}</a></li>
 	   {% endfor %}
+
 	   {% else %}
-     {% for k,v in article.items() %}
-	    <li>{{k}} : {{v}}</li>
-	   {% endfor %}
+
+	   <h1>{{titre}}</h1>
+	   <li>Auteur : {{auteur}}</li>
+	   <li>Date : {{date}}</li>
+	   <p> {{texte}}</p>
+
 	   {% endif %}
-	  </ul>
+	 </ul>
+
+
 
 {% endblock %}

@@ -86,8 +86,12 @@ def texte(article=None):
     else:
         for dico in ARTICLES:
             if dico["titre"] == article:
-                articles=dico
-        return render_template('<articles>.html',article=articles)
+                titre=dico["titre"]
+                auteur=dico["auteur"]
+                date= dico["date"]
+                with open(dico["texte"], "r") as fichier:
+                    texte=fichier.read()
+                    return render_template('<articles>.html',titre=titre, auteur=auteur, date=date, texte=texte)
     
 
 @app.route('/articles')
@@ -128,26 +132,27 @@ def search():
         wordsearch=request.args.get("pattern",'')
         id_list,result=[],[]
         for article in ARTICLES:
-            if wordsearch.lower() in article["titre"].lower() :
+            if wordsearch.lower() in article["titre"].lower() :  # comparaison par titre
                 id_list.append(article["id"])
-            elif wordsearch.lower() in article["auteur"].lower() :
+            elif wordsearch.lower() in article["auteur"].lower() :  # comparaison par auteur
                 id_list.append(article["id"])
-        for categorie, ID in CATEGORIES.items():
-            if wordsearch.lower() in categorie.lower():
+
+        for categorie, ID in CATEGORIES.items():   # comparaison par catégorie
+            if wordsearch.lower() in categorie.lower():  
                 for identifiant in ID:
                     id_list.append(identifiant)
+
         id_list=list(set(id_list)) #suppression des doublons
         for ID in id_list:
             for article in ARTICLES:
                 if article["id"]==ID:
-                    result.append(article)
+                    result.append(article)  # ajout de tous les articles concernés par la recherche
                     break
         if result==[]:
             return render_template('texte.html',articlename=ARTICLES, error="true")
         else:
             return render_template('texte.html',articlename=result)     
 
-        
 
 
 # Script starts here
