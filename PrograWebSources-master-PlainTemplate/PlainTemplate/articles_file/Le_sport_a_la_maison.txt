@@ -24,9 +24,9 @@ Vous pouvez notamment jouer au jeu "le gainage Béret" où il s'agit de choisir 
 
 Des applications pour vous coacher 
 Voici quelques applications vous proposant des programmes d’entraînements à distance, et qui sont en partenariat avec le ministère des Sports :
-Be Sport
-Activiti (bientôt disponible)
-Goove App
+* Be Sport
+* Activiti (bientôt disponible)
+* Goove App
 
 Elles ont déjà été conventionnées avec de nombreuses fédérations sportives ainsi qu’avec le Comité National Olympique et Sportif Français, pour vous proposer gratuitement des séries d'exercices pensés par des professionnels du sport, de la santé et de l’activité physique adaptée.
 
