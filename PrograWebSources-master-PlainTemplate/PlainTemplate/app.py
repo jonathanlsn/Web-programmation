@@ -86,8 +86,12 @@ def texte(article=None):
     else:
         for dico in ARTICLES:
             if dico["titre"] == article:
-                articles=dico
-        return render_template('<articles>.html',article=articles)
+                titre=dico["titre"]
+                auteur=dico["auteur"]
+                date= dico["date"]
+                with open(dico["texte"], "r") as fichier:
+                    texte=fichier.read()
+                    return render_template('<articles>.html',titre=titre, auteur=auteur, date=date, texte=texte.split("\n"))
     
 
 @app.route('/articles')
@@ -95,25 +99,21 @@ def articles():
     return render_template('articles.html', articlename=ARTICLES)
 
 
-
-@app.route('/articles', methods=["POST"])
-def add():
-    categorie=request.form['categorie']
+@app.route('/articles', methods=['POST'])
+def add_articles():
+    catégorie=request.form['catégorie-select']
     assert catégorie!=""
     titre=request.form['titre']
     auteur=request.form['auteur']
     texte=request.form['texte']
     date=request.form['date']
     ref=request.form['ref']
-
     with open("./articles_file/"+titre+".txt", "a") as fichier:
         fichier.write(texte)
-
     new_article={"id":len(ARTICLES),"auteur":auteur,"titre": titre, "référence": ref,
-     "texte": titre+".txt", "date": date}
-   
+     "texte": titre+".txt", "date": date}  
     ARTICLES.append(new_article)
-    CATEGORIES[categorie].append(new_article["id"])
+    CATEGORIES[catégorie].append(new_article["id"])
     return render_template('articles.html', articlename=ARTICLES)
    
 
@@ -129,39 +129,30 @@ def test():
 def search():
     app.logger.debug(request.args)
     if (request.method=="GET"):
-        u = []
-        a = []
-        c = []
+        wordsearch=request.args.get("pattern",'')
+        id_list,result=[],[]
+        for article in ARTICLES:
+            if wordsearch.lower() in article["titre"].lower() :  # comparaison par titre
+                id_list.append(article["id"])
+            elif wordsearch.lower() in article["auteur"].lower() :  # comparaison par auteur
+                id_list.append(article["id"])
 
-        for i in ARTICLES:
-            n = i["titre"].lower()
-            aut = i["auteur"].lower()
+        for categorie, ID in CATEGORIES.items():   # comparaison par catégorie
+            if wordsearch.lower() in categorie.lower():  
+                for identifiant in ID:
+                    id_list.append(identifiant)
 
-            pat = request.args["pattern"].lower()
-            if n.find(pat) != -1 :
-                u.append(i)
+        id_list=list(set(id_list)) #suppression des doublons
+        for ID in id_list:
+            for article in ARTICLES:
+                if article["id"]==ID:
+                    result.append(article)  # ajout de tous les articles concernés par la recherche
+                    break
+        if result==[]:
+            return render_template('texte.html',articlename=ARTICLES, error="true")
+        else:
+            return render_template('texte.html',articlename=result)     
 
-            if aut.find(pat) != -1 :
-                a.append(i)
-        
-        for j in CATEGORIES:
-            pat = request.args["pattern"].lower()
-            if j.lower().find(pat) != -1 :
-                for b in CATEGORIES[j] :
-                    for i in ARTICLES :
-                        if b == i["id"] :
-                            c.append(i)
-
-
-        t = copy.deepcopy(u)
-        for i in a:
-            if i not in t:
-                t.append(i)
-        for i in c:
-            if i not in t:
-                t.append(i)
- 
-    return render_template('search_article.html', titre=u, auteur = a, total = t, categorie = c, pattern = request.args["pattern"])
 
 
 # Script starts here

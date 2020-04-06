@@ -1,28 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
-<style type="text/css">
-  body {
-    font-family: Georgia, "Times New Roman",
-          Times, serif;
-    color: #1d030b;
-    background-color:  #d2def0 }
-  h1 {
-    font-family: Helvetica, Geneva, Arial,
-          SunSans-Regular, sans-serif }
-  </style>
-<h1>Liste</h1>
+
 
     <ul>
 	   {% if vname in vcat %}
+	   <h1>Liste</h1>
 	   {% for item in articles %}
 	     <li><a href="/texte/{{ item.titre }}">{{ item.titre}}</a></li>
 	   {% endfor %}
+
 	   {% else %}
-     {% for k,v in article.items() %}
-	    <li>{{k}} : {{v}}</li>
-	   {% endfor %}
+
+	   <h1>{{titre}}</h1>
+	   <li>Auteur : {{auteur}}</li>
+	   <li>Date : {{date}}</li>
+
+
+       {% for i in texte %}
+            {{i}}
+            <br>
+       {% endfor %}
+
 	   {% endif %}
-	  </ul>
+	 </ul>
+
+
 
 {% endblock %}
