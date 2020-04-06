@@ -104,7 +104,6 @@ def add_articles():
     app.logger.debug(request.form)
     catégorie=request.form['categorie']
     assert catégorie!=""
-
     titre=request.form['titre']
     auteur=request.form['auteur']
     date=request.form['date']
