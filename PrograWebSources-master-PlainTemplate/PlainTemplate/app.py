@@ -91,7 +91,7 @@ def texte(article=None):
                 date= dico["date"]
                 with open(dico["texte"], "r") as fichier:
                     texte=fichier.read()
-                    return render_template('<articles>.html',titre=titre, auteur=auteur, date=date, texte=texte)
+                    return render_template('<articles>.html',titre=titre, auteur=auteur, date=date, texte=texte.split("\n"))
     
 
 @app.route('/articles')

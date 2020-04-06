@@ -15,7 +15,12 @@
 	   <h1>{{titre}}</h1>
 	   <li>Auteur : {{auteur}}</li>
 	   <li>Date : {{date}}</li>
-	   <p> {{texte}}</p>
+
+
+       {% for i in texte %}
+            {{i}}
+            <br>
+       {% endfor %}
 
 	   {% endif %}
 	 </ul>
