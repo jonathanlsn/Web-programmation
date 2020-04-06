@@ -1,5 +1,4 @@
 // Add your JS code here
-
 function valider() {
 if (document.getElementById('serie1c').checked) {
 alert('Bravo !!!')
