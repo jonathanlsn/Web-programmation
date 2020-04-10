@@ -38,3 +38,7 @@ font-family: Georgia, "Times New Roman",
     color: #1d030b;
     background-color:  #d2def0;
 }
+img {
+	width: 350px;
+	height: 350px;
+}
