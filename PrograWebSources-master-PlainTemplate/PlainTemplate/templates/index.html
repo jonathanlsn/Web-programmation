@@ -5,12 +5,38 @@
 <h1> S'occuper pendant le confinement</h1>
 <p> <b>  N'oubliez pas de vous laver les mains et de rester chez vous !</b></p>
 
-<p>Bienvenu, Wilkommen, Welcome ! </p>
+<p>Bienvenue sur notre site! </p>
 
-<p> Voici de quoi s'occuper pendant le confinement ! </p>
+<p> Si vous voulez en savoir plus sur le confinement, ce site est <strong>fait pour vous ! </strong></p>
+<p> Si vous vous ennuyez, ce site est aussi <strong>fait pour vous !</strong> </p>
 
+<p> Vous avez <strong> la possibilité de lire </strong> quelques articles rédigés par nore équipe ou encore de découvrir un reccueil d'articles provenant du web. </p>
+
+<p> Dans le cas où vous souhaiteriez lire nos articles, il suffit d'en séléctionner un dans la liste ou vous avez la possibilité de faire <strong>une recherche</strong> par mots clefs parmis les tags, les noms d'auteurs... </p>
+
+<p> Vous avez également la possibilité d'en <strong>rajouter</strong> par vous même ! </p>
+
+<p> Pour finir, n'hésitez pas à faire <strong>notre petit questionnaire</strong> de confinement réalisé avec du javascript ! </p>
+<hr/>
+<p> Voici quelques découvertes de confinement, que nous voulions partager avec vous: </p>
+
+* Un peu de musique:
 <center>
-<img src="{{url_for('static', filename='image/confinement.jpg',width="25")}}" />
+<video controls width="250">
+
+    <source src="{{url_for('static', filename='video/Chopin.mp4',width="25")}}"
+            type="video/webm">
+
+    <source src="{{url_for('static', filename='video/Chopin.mp4',width="25")}}"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
 </center>
+
+* Une petite blague: <br /> 
+ <br /> 
+* Un peu de sport:
+
 
 {% endblock %}
