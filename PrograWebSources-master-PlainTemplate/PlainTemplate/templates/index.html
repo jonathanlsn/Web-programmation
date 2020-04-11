@@ -28,7 +28,7 @@
  <br /> 
 <center>
 
-<video controls width="250">
+<video controls width="350">
 
     <source src="{{url_for('static', filename='video/LP.mp4',width="25")}}"
             type="video/webm">
@@ -38,7 +38,7 @@
 
     Sorry, your browser doesn't support embedded videos.
 </video>
-<video controls width="250">
+<video controls width="350">
 
     <source src="{{url_for('static', filename='video/Tim.mp4',width="25")}}"
             type="video/webm">
@@ -48,7 +48,7 @@
 
     Sorry, your browser doesn't support embedded videos.
 </video>
-<video controls width="250">
+<video controls width="350">
 
     <source src="{{url_for('static', filename='video/chop.mp4',width="25")}}"
             type="video/webm">
@@ -59,12 +59,17 @@
     Sorry, your browser doesn't support embedded videos.
 </video>
 </center>
-
+ <br /> 
 <strong>* Une petite blague:</strong> <br /> 
  <br /> 
  <br /> 
-<center>
+<center><img src="{{url_for('static', filename='image/blagounette.png',width="5")}}" />
 <img src="{{url_for('static', filename='image/humour.png',width="5")}}" />
+<img src="{{url_for('static', filename='image/manger.png',width="5")}}" />
+</center>
+<center><img src="{{url_for('static', filename='image/alcool.jpeg',width="5")}}" />
+<img src="{{url_for('static', filename='image/maman.png',width="5")}}" />
+<img src="{{url_for('static', filename='image/enfants.jpeg',width="5")}}" />
 </center>
 
  <br /> 
@@ -77,5 +82,14 @@
 <img src="{{url_for('static', filename='image/exercices.jpg',width="5")}}" />
 </center>
 
+ <br /> 
+<strong>* Activités avec les enfants: </strong><br /> 
+ <br /> 
+ <br /> 
+<center>
+<img src="{{url_for('static', filename='image/enfant1.jpg',width="5")}}" />
+<img src="{{url_for('static', filename='image/enfant2.jpeg',width="5")}}" />
+<img src="{{url_for('static', filename='image/enfant3.jpg',width="5")}}" />
+</center>
 
 {% endblock %}
