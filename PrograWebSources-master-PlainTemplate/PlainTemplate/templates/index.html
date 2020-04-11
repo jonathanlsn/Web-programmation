@@ -5,6 +5,9 @@
 <h1> S'occuper pendant le confinement</h1>
 <p> <b>  N'oubliez pas de vous laver les mains et de rester chez vous !</b></p>
 
+<div style="text">Entrer votre Nom : <input type="text" id="texte1"> </div>
+<div style="text"><input type="button" value="Cliquer" onClick="afficheMessage()"> </div>
+
 <p>Bienvenue sur notre site! </p>
 
 <p> Si vous voulez en savoir plus sur le confinement, ce site est <strong>fait pour vous ! </strong></p>
@@ -24,12 +27,33 @@
  <br /> 
  <br /> 
 <center>
+
 <video controls width="250">
 
-    <source src="{{url_for('static', filename='video/Chopin.mp4',width="25")}}"
+    <source src="{{url_for('static', filename='video/LP.mp4',width="25")}}"
             type="video/webm">
 
-    <source src="{{url_for('static', filename='video/Chopin.mp4',width="25")}}"
+    <source src="{{url_for('static', filename='video/LP.mp4',width="25")}}"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+<video controls width="250">
+
+    <source src="{{url_for('static', filename='video/Tim.mp4',width="25")}}"
+            type="video/webm">
+
+    <source src="{{url_for('static', filename='video/Tim.mp4',width="25")}}"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+<video controls width="250">
+
+    <source src="{{url_for('static', filename='video/chop.mp4',width="25")}}"
+            type="video/webm">
+
+    <source src="{{url_for('static', filename='video/chop.mp4',width="25")}}"
             type="video/mp4">
 
     Sorry, your browser doesn't support embedded videos.
@@ -49,6 +73,8 @@
  <br /> 
 <center>
 <img src="{{url_for('static', filename='image/sport.jpg',width="5")}}" />
+<img src="{{url_for('static', filename='image/sport1.png',width="5")}}" />
+<img src="{{url_for('static', filename='image/exercices.jpg',width="5")}}" />
 </center>
 
 
