@@ -89,9 +89,10 @@ def texte(article=None):
                 titre=dico["titre"]
                 auteur=dico["auteur"]
                 date= dico["date"]
+                référence=dico["référence"]
                 with open(dico["texte"], "r") as fichier:
                     texte=fichier.read()
-                    return render_template('<articles>.html',titre=titre, auteur=auteur, date=date, texte=texte.split("\n"))
+                    return render_template('<articles>.html',titre=titre, auteur=auteur, date=date, texte=texte.split("\n"), référence=référence)
     
 
 @app.route('/articles')
