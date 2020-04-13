@@ -110,10 +110,11 @@ def add_articles():
     date=request.form['date']
     texte=request.form['texte']
     ref=request.form['ref']
-    with open("./articles_file/"+ref+".txt", "a") as fichier:
+    name="_".join(titre.split(" "))
+    with open("./articles_file/"+name+".txt", "a") as fichier:
         fichier.write(texte)
     new_article={"id":len(ARTICLES),"auteur":auteur,"titre": titre, "référence": ref,
-     "texte": "articles_file/"+ref+".txt", "date": date}  
+     "texte": "articles_file/"+name+".txt", "date": date}  
     ARTICLES.append(new_article)
     CATEGORIES[catégorie].append(new_article["id"])
     return render_template('articles.html', articlename=ARTICLES)
