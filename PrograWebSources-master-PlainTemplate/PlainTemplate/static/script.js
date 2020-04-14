@@ -30,3 +30,9 @@ alert('Bravo !!!')
 alert('Votre réponse est incorrecte...')
 }
 }
+
+function afficheMessage() {
+
+alert('Bonjour '+document.getElementById('texte1').value+' et bienvenue sur notre page !');
+
+}

@@ -13,8 +13,11 @@
 	   {% else %}
 
 	   <h1>{{titre}}</h1>
-	   <li>Auteur : {{auteur}}</li>
-	   <li>Date : {{date}}</li>
+	   <li> <strong>Auteur : {{auteur}} </strong></li>
+	   <li> <strong>Date : {{date}} </strong></li>
+	   {% if référence !="" %}
+	   		<p> <strong>Référence :  </strong><a href="{{ référence }}">{{ référence }}</a></p>
+	   {% endif %}
 
        <br> 
        {% for i in texte %}
@@ -22,6 +25,9 @@
             <br>
        {% endfor %}
 
+       	
+       
+       		
 	   {% endif %}
 	 </ul>
 
