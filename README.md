@@ -17,8 +17,10 @@ The Articles tab allows you to display all the categories of articles already pr
 The web page is on a local server: http://localhost:8000/
 
 You must type the following commands:
+
 ./do
-./do serv
+
+./do serve
 
 ### Authors:
 
