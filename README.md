@@ -13,6 +13,8 @@ On the home page, you will find some funny pictures or music, allowing you to ch
 
 The Articles tab allows you to display all the categories of articles already present on the site. You can add articles, thanks to the Add an article tab.
 
+We choose to unable delete articles because this is not link with the project aim.
+
 ### How to access the site?
 The web page is on a local server: http://localhost:8000/
 
@@ -21,6 +23,9 @@ You must type the following commands:
 ./do
 
 ./do serve
+
+### TO DO IN THE FUTURE:
+* Adds some new categories
 
 ### Authors:
 
